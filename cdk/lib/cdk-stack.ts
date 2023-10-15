@@ -274,7 +274,7 @@ export class CdkStack extends cdk.Stack {
 
     const moodleService = new ecs.FargateService(
       this,
-      this.resource_name("service"),
+      this.resource_name("fargate-service"),
       {
         cluster: cluster,
         taskDefinition: moodleTaskDefinition,
