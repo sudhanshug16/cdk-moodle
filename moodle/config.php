@@ -28,6 +28,7 @@ if (empty($_SERVER['HTTP_HOST'])) {
 }
 $CFG->wwwroot   = 'https://' . $_SERVER['HTTP_HOST'];
 $CFG->dataroot  = '/moodle-efs/moodledata';
+
 $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 02775;
