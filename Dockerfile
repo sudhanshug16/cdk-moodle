@@ -9,9 +9,9 @@ RUN pecl install redis && docker-php-ext-enable redis
 RUN pecl install xmlrpc-beta && docker-php-ext-enable xmlrpc
 
 COPY setup.sh /setup.sh
+RUN chmod +x /setup.sh && /setup.sh
 
 COPY ./moodle /var/www/html/
 
 RUN echo max_input_vars = 5000 >> /usr/local/etc/php/php.ini
 EXPOSE 80
-CMD chmod +x /setup.sh && /setup.sh
