@@ -297,7 +297,7 @@ export class CdkStack extends cdk.Stack {
         healthCheckGracePeriod: cdk.Duration.seconds(
           parseInt(process.env.SERVICE_HEALTH_CHECK_GRACE_PERIOD_SECONDS!)
         ),
-        // circuitBreaker: { rollback: true },
+        circuitBreaker: { rollback: true },
       }
     );
 
