@@ -1,7 +1,9 @@
 #!/bin/sh
 
 # Export environment variables to a file
-printenv | sed 's/^\(.*\)$/export \1/g' > /root/project_env.sh
+env | while IFS='=' read -r name value ; do
+    printf 'export %s="%s"\n' "$name" "$value"
+done > /root/project_env.sh
 
 # Start the cron service
 service cron start
