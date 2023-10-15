@@ -26,11 +26,7 @@ $CFG->dboptions = array (
 if (empty($_SERVER['HTTP_HOST'])) {
   $_SERVER['HTTP_HOST'] = '127.0.0.1:8080';
 }
-if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
-  $CFG->wwwroot   = 'https://' . $_SERVER['HTTP_HOST'];
-} else {
-  $CFG->wwwroot   = 'http://' . $_SERVER['HTTP_HOST'];
-}
+$CFG->wwwroot   = 'https://' . $_SERVER['HTTP_HOST'];
 $CFG->sslproxy = true;
 
 $CFG->dataroot  = '/moodle-efs/moodledata';
