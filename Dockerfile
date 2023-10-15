@@ -16,7 +16,7 @@ COPY ./moodle /var/www/html/
 RUN echo max_input_vars = 5000 >> /usr/local/etc/php/php.ini
 EXPOSE 80
 
-RUN echo "*/1 * * * * root php -q -f /var/www/html/moodle/admin/cli/cron.php > /var/log/moodle_cron.log" >> /etc/crontab
+RUN echo "*/1 * * * * root php -q -f /var/www/html/admin/cli/cron.php > /var/log/moodle_cron.log" >> /etc/crontab
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
