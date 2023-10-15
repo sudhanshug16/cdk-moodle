@@ -372,6 +372,7 @@ export class CdkStack extends cdk.Stack {
         ],
         healthCheck: {
           timeout: cdk.Duration.seconds(20),
+          healthyHttpCodes: "200-399",
         },
       }
     );
