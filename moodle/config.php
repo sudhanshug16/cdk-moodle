@@ -4,11 +4,6 @@ unset($CFG);
 global $CFG;
 $CFG = new stdClass();
 
-@error_reporting(E_ALL | E_STRICT);  
-@ini_set('display_errors', '1');
-$CFG->debug = (E_ALL | E_STRICT);  
-$CFG->debugdisplay = 1;
-
 $CFG->dbtype    = $_ENV['MOODLE_DATABASE_TYPE'];
 $CFG->dblibrary = 'native';
 $CFG->dbhost    = $_ENV['MOODLE_DATABASE_HOST'];
