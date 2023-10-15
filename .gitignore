@@ -1,0 +1,10 @@
+cdk/*.js
+cdk/!jest.config.js
+cdk/*.d.ts
+cdk/node_modules
+
+# CDK asset staging directory
+cdk/.cdk.staging
+cdk/cdk.out
+cdk/cdk.context.json
+.env
