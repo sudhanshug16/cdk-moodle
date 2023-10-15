@@ -195,7 +195,7 @@ export class CdkStack extends cdk.Stack {
         memoryLimitMiB: 4096,
         runtimePlatform: {
           operatingSystemFamily: ecs.OperatingSystemFamily.LINUX,
-          cpuArchitecture: ecs.CpuArchitecture.ARM64,
+          cpuArchitecture: ecs.CpuArchitecture.X86_64,
         },
       }
     );
