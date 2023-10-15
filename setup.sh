@@ -1,14 +1,8 @@
-# Variables
-dir="/moodle-efs/moodledata"
-owner_user="www-data"
-owner_group="root"
-dir_mode="775"
-file_mode="664"
-
 # Ensure directory exists
-[ -d "${dir}" ] || mkdir -p "${dir}"
+[ -d "/moodle-efs/moodledata" ] || mkdir -p "/moodle-efs/moodledata"
 
 # Configure permissions and ownership
-chown ${owner_user}:${owner_group} ${dir}
-chmod ${dir_mode} ${dir}
-find ${dir} -type f -exec chmod ${file_mode} {} \;
+chown www-data:root /moodle-efs/moodledata
+chmod 775 -R /moodle-efs/moodledata
+find /moodle-efs/moodledata -type f -exec chmod 664 {} \;
+

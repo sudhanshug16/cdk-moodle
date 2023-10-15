@@ -4,6 +4,13 @@ unset($CFG);
 global $CFG;
 $CFG = new stdClass();
 
+if (getenv('PROD') != 'true') {
+  @error_reporting(E_ALL | E_STRICT);  
+  @ini_set('display_errors', '1');
+  $CFG->debug = (E_ALL | E_STRICT);  
+  $CFG->debugdisplay = 1;
+}
+
 $CFG->dbtype    = $_ENV['MOODLE_DATABASE_TYPE'];
 $CFG->dblibrary = 'native';
 $CFG->dbhost    = $_ENV['MOODLE_DATABASE_HOST'];
@@ -21,8 +28,13 @@ $CFG->dboptions = array (
 if (empty($_SERVER['HTTP_HOST'])) {
   $_SERVER['HTTP_HOST'] = '127.0.0.1:8080';
 }
-$CFG->wwwroot   = 'https://' . $_SERVER['HTTP_HOST'];
-$CFG->sslproxy = true;
+
+if (getenv('PROD') == 'true') {
+  $CFG->wwwroot   = 'https://' . $_SERVER['HTTP_HOST'];
+  $CFG->sslproxy = true;
+} else {
+  $CFG->wwwroot   = 'http://' . $_SERVER['HTTP_HOST'];
+}
 
 $CFG->dataroot  = '/moodle-efs/moodledata';
 

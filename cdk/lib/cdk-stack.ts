@@ -249,10 +249,7 @@ export class CdkStack extends cdk.Stack {
           MOODLE_DATABASE_USER: this.MoodleDatabaseUsername,
           MOODLE_USERNAME: "moodleadmin",
           MOODLE_EMAIL: "hello@example.com",
-          MOODLE_SITE_NAME: "Scalable Moodle on ECS Fargate",
-          MOODLE_SKIP_BOOTSTRAP: "no",
-          MOODLE_SKIP_INSTALL: "no",
-          BITNAMI_DEBUG: "true",
+          PROD: "true",
         },
         secrets: {
           MOODLE_DATABASE_PASSWORD: ecs.Secret.fromSecretsManager(
