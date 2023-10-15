@@ -8,8 +8,6 @@ $CFG = new stdClass();
 @ini_set('display_errors', '1');
 $CFG->debug = (E_ALL | E_STRICT);  
 $CFG->debugdisplay = 1;
-echo $_SERVER['HTTP_HOST'];
-die();
 
 $CFG->dbtype    = $_ENV['MOODLE_DATABASE_TYPE'];
 $CFG->dblibrary = 'native';
@@ -33,6 +31,8 @@ if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
 } else {
   $CFG->wwwroot   = 'http://' . $_SERVER['HTTP_HOST'];
 }
+$CFG->sslproxy = true;
+
 $CFG->dataroot  = '/moodle-efs/moodledata';
 
 $CFG->admin     = 'admin';
