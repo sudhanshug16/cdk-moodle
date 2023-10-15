@@ -15,3 +15,5 @@ COPY ./moodle /var/www/html/
 
 RUN echo max_input_vars = 5000 >> /usr/local/etc/php/php.ini
 EXPOSE 80
+
+CMD chmod +x /setup.sh && /setup.sh
