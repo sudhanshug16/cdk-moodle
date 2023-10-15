@@ -31,7 +31,7 @@ if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
 } else {
   $CFG->wwwroot   = 'http://' . $_SERVER['HTTP_HOST'];
 }
-$CFG->dataroot  = '/mnt/moodledata';
+$CFG->dataroot  = '/moodle-efs/moodledata';
 $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 02775;

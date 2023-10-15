@@ -215,7 +215,7 @@ export class CdkStack extends cdk.Stack {
     );
 
     moodleTaskDefinition.addVolume({
-      name: "moodledata",
+      name: "moodle",
       efsVolumeConfiguration: {
         fileSystemId: moodledataEfs.fileSystemId,
         transitEncryption: "ENABLED",
@@ -267,8 +267,8 @@ export class CdkStack extends cdk.Stack {
       }
     );
     moodleContainerDefinition.addMountPoints({
-      sourceVolume: "moodledata",
-      containerPath: "/mnt/moodledata",
+      sourceVolume: "moodle",
+      containerPath: "/moodle-efs",
       readOnly: false,
     });
 

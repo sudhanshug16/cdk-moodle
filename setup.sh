@@ -1,5 +1,5 @@
 # Variables
-dir="/mnt/moodledata"
+dir="/moodle-efs/moodledata"
 owner_user="www-data"
 owner_group="root"
 dir_mode="775"
