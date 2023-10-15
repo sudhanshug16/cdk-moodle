@@ -268,7 +268,7 @@ export class CdkStack extends cdk.Stack {
     );
     moodleContainerDefinition.addMountPoints({
       sourceVolume: "moodledata",
-      containerPath: "/moodledata",
+      containerPath: "/mnt/moodledata",
       readOnly: false,
     });
 
