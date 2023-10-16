@@ -14,7 +14,9 @@ RUN chmod +x /setup.sh && /setup.sh
 
 COPY ./moodle /var/www/html/
 
-RUN echo max_input_vars = 5000 >> /usr/local/etc/php/php.ini
+RUN echo "max_input_vars = 5000" >> /usr/local/etc/php/php.ini
+RUN echo "display_errors = Off" >> /usr/local/etc/php/php.ini
+RUN echo "log_errors = On" >> /usr/local/etc/php/php.ini
 EXPOSE 80
 
 COPY cron.sh /cron.sh
