@@ -8,4 +8,3 @@ cdk/.cdk.staging
 cdk/cdk.out
 cdk/cdk.context.json
 .env
-moodle/lib
